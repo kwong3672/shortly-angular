@@ -2,7 +2,46 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+  var getAll = function() {
+    return $http({
+      method: 'GET', 
+      url: '/api/links'
+    })
+    .then (function successCallback(res) {
+      //do something
+      return res.data;
+      // res.send('res.body');
+    }, function errorCallback(res) {
+      console.log('error on line 17 ', err);
+      // res.send();
+    });
+  };
+
+  var addOne = function(url) {
+
+    return $http({
+      method: 'POST', 
+      url: '/api/links',
+      data: url
+    })
+    .then (function successCallback(res) {
+      //do something
+      return res;
+    }, function errorCallback(res) {
+      console.log('error addOne', err);
+    });
+  };
+
+  return {
+    getAll: getAll,
+    addOne: addOne
+  };
+
 })
+
+
+
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
