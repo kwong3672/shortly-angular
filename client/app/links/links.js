@@ -1,13 +1,15 @@
-angular.module('shortly.links', ['shortly.services'])
+angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, $location, Links, Auth) {
   // Your code here
   // Links.getAll();
   $scope.data = {};
   Links.getAll().then(function(data) {
-    console.log(data);
     $scope.data.links = data;
   });
   // $scope.linksHtml = <div> this is the links div</div> 
-
+  $scope.signout = function() {
+    Auth.signout();
+    $location.path('/signin');
+  };
 });

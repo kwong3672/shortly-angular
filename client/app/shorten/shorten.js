@@ -1,6 +1,6 @@
 angular.module('shortly.shorten', ['shortly.services'])
 
-.controller('ShortenController', function ($scope, $location, Links) {
+.controller('ShortenController', function ($scope, $location, Links, Auth) {
   // Your code here
 
 
@@ -16,5 +16,10 @@ angular.module('shortly.shorten', ['shortly.services'])
     } else {
       alert('bad url, please verify');
     }
+  };
+
+  $scope.signout = function() {
+    Auth.signout();
+    $location.path('/signin');
   };
 });

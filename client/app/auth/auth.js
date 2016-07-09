@@ -13,7 +13,9 @@ angular.module('shortly.auth', [])
     if ($scope.user.username.match(rValidUserName)) {
       Auth.signin($scope.user)
         .then(function (token) {
+          console.log(token, '=====================token=======================');
           $window.localStorage.setItem('com.shortly', token);
+          console.log($window.localStorage['com.shortly']);
           $location.path('/links');
         })
         .catch(function (error) {
@@ -40,4 +42,5 @@ angular.module('shortly.auth', [])
       alert('the username is not valid!');
     }
   };
+
 });

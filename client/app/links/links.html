@@ -1,11 +1,15 @@
-<div id='container' ng-app='shortly.links'>
+<div id='container'>
+ <!-- ng-app='shortly.links'> -->
   <div class='navigation'>
   <ul>
     <li><a href='#/links' class='index'>All Links</a></li>
     <li><a href='#/shorten' class='create'>Shorten</a></li>
-    <li><a href='#/logout' class='logout'>Logout</a></li>
+    <li><a href='#/signin' class='logout' ng-click='signout()'>Logout</a></li>
   </ul>
-  <input ng-model='filterLinks'>
+
+  </div>
+  <div>
+    <input ng-model='filterLinks'>
   </div>
   <!-- Your html here -->
   <!-- <img src='/redirect_icon.png'/> -->
