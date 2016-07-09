@@ -5,10 +5,11 @@
     <li><a href='#/shorten' class='create'>Shorten</a></li>
     <li><a href='#/logout' class='logout'>Logout</a></li>
   </ul>
+  <input ng-model='filterLinks'>
   </div>
   <!-- Your html here -->
   <!-- <img src='/redirect_icon.png'/> -->
-  <div class='info link' ng-repeat="link in data.links" ng-controller='LinksController'>
+  <div class='info link' ng-repeat="link in data.links | orderBy:'-visits' | filter:filterLinks " ng-controller='LinksController'>
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
     <div class='title'>{{link.title}}</div>
     <div class='original'>{{link.url}}</div>
