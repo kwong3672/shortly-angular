@@ -5,7 +5,8 @@ angular.module('shortly.links', ['shortly.services'])
   // Links.getAll();
   $scope.data = {};
   Links.getAll().then(function(data) {
-    console.log('#####################################', data);
     $scope.data.links = data;
   });
+  // $scope.linksHtml = <div> this is the links div</div> 
+
 });
