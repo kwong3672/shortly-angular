@@ -1,7 +1,14 @@
 <div id='container' ng-app='shortly.links'>
+  <div class='navigation'>
+  <ul>
+    <li><a href='#/links' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
+    <li><a href='#/logout' class='logout'>Logout</a></li>
+  </ul>
+  </div>
   <!-- Your html here -->
   <!-- <img src='/redirect_icon.png'/> -->
-  <div class='info' ng-repeat="link in links" ng-controller='LinksController'>
+  <div class='info link' ng-repeat="link in data.links" ng-controller='LinksController'>
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
     <div class='title'>{{link.title}}</div>
     <div class='original'>{{link.url}}</div>

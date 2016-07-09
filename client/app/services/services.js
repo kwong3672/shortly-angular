@@ -25,7 +25,6 @@ angular.module('shortly.services', [])
       data: url
     })
     .then (function successCallback(res) {
-      //do something
       return res;
     }, function errorCallback(res) {
       console.log('error addOne', err);
